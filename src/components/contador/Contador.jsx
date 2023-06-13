@@ -1,19 +1,15 @@
-import {useState, useEffect} from "react"
+import { useState, useEffect } from "react"
 
 
-const Contador = ({stock, inicial}) => {
+const Contador = ({ stock, inicial }) => {
   const [contador, setContador] = useState(inicial);
 
-
   useEffect(() => {
-    if(stock > 0){
-      
-    }
-  }, [])
-
+    document.title = `Contador: ${contador}`;
+  }, [contador])
 
   const aumentarContador = () => {
-    if (contador < stock){
+    if (contador < stock) {
       setContador(contador + 1);
     }
   }

@@ -1,10 +1,15 @@
 import Contador from './components/contador/Contador'
+import NavBar from './components/NavBar/NavBar'
+import ItemListContainer from './components/ItemListContainer/ItemListContainer'
+
 
 const App = () => {
   return (
     <>
-      <h1>Que anda mi gente</h1>
-      <Contador stock={10} inicial={1}/>
+      <NavBar/>
+      <h1 className='text-center m-2'>SwimOutlet</h1>
+      <ItemListContainer greeting={"Mis productos"}/>
+      {/* <Contador stock={10} inicial={1}/> */}
     </>
   )
 }
