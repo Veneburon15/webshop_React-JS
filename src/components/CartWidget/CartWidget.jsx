@@ -3,7 +3,7 @@ import React from 'react'
 const CartWidget = () => {
     return (
         <div>
-            <img style={{width:"3rem"}} src="../images/icono-carrito.png" alt="Carrito de compras" />
+            <img style={{width:"2.5rem"}}  src='../images/icono-coffecup.png' alt="Carrito de compras" />
             <strong style={{color:"white"}}>10</strong>
         </div>
     )

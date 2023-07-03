@@ -7,14 +7,12 @@ const NavBar = () => {
     return (
         <Navbar bg="dark" variant="dark">
             <Container>
-                <Navbar.Brand href="#home">SwimOutlet</Navbar.Brand>
+                <Navbar.Brand href="#home">Éclat</Navbar.Brand>
                 <Nav className="me-auto">
-                    <Nav.Link href="#home">Lentes</Nav.Link>
-                    <Nav.Link href="#features">Gorras</Nav.Link>
-                    <Nav.Link href="#features">Mochilas</Nav.Link>
-                    <Nav.Link href="#pricing">Mallas de entrenamiento</Nav.Link>
-                    <Nav.Link href="#pricing">Mallas de competición</Nav.Link>
-                    <Nav.Link href="#features">Accesorios</Nav.Link>
+                    <Nav.Link href="#home">Inicio</Nav.Link>
+                    <Nav.Link href="#Cafe">Café</Nav.Link>
+                    <Nav.Link href="#Helados">Helados</Nav.Link>
+                    <Nav.Link href="#Postres">Postres</Nav.Link>
                 </Nav>
                 <CartWidget/>
             </Container>
