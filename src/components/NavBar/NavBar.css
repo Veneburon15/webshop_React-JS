@@ -3,10 +3,24 @@ header {
     align-items: center;
     justify-content: space-between;
     border-bottom: 1px solid black;
+    background-color: black;
 }
 
 li {
     display: inline-block;
     margin: 1rem;
     cursor: pointer;
+}
+
+.brand{
+    color: #9b3603c7;
+}
+
+.navigation {
+    text-decoration: none;
+}
+
+.menu {
+    color: #d5cfcd;
+    font-size: 1.5rem;
 }

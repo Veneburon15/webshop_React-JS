@@ -5,19 +5,19 @@ import './NavBar.css'
 const NavBar = () => {
   return (
     <header>
-        <Link to="/">
-          <h1>Èclat</h1>
+        <Link className='navigation' to="/">
+          <h1><strong className='brand'>Èclat</strong></h1>
         </Link>
         <nav>
             <ul>
                 <li> 
-                    <NavLink to="/categoria/Cafe"> Café </NavLink>
+                    <NavLink className='navigation menu' to="/categoria/Cafe"> Café </NavLink>
                 </li>
                 <li>  
-                    <NavLink to="/categoria/Helados"> Helados </NavLink>
+                    <NavLink className='navigation menu' to="/categoria/Helados"> Helados </NavLink>
                 </li>
                 <li>  
-                    <NavLink to="/categoria/Postres"> Postres </NavLink>
+                    <NavLink className='navigation menu' to="/categoria/Postres"> Postres </NavLink>
                 </li>
             </ul>
         </nav>
