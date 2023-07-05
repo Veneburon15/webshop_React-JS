@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 
 
-const Contador = ({ stock, inicial }) => {
+ export const Contador = ({ stock, inicial }) => {
   const [contador, setContador] = useState(inicial);
 
   useEffect(() => {
