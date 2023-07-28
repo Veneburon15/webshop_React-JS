@@ -6,7 +6,7 @@ export const CarritoContext = createContext({
     cantidadTotal: 0
 })
 
-//El valor inicial es un obejto, con la propiedad "carrito", "total" y "cantidad total"
+//El valor inicial es un objeto, con la propiedad "carrito", "total" y "cantidad total"
 
 export const CarritoProvider = ({children}) => {
     const [carrito, setCarrito] = useState([]);
@@ -16,9 +16,8 @@ export const CarritoProvider = ({children}) => {
     //Provisoriamente, verficamos por consola
     console.log(carrito);
 
-
     //Agregamos algunos métodos a este componente para manipular el carrito de compras
-    //Función aora agregar productos al carrito, evitando duplicados
+    //Función para agregar productos al carrito, evitando duplicados
     const agregarProducto = (item, cantidad) => {
         const productoExistente = carrito.find(prod => prod.item.id === item.id)
         if (!productoExistente) {
@@ -26,7 +25,7 @@ export const CarritoProvider = ({children}) => {
             //Esta sintaxis se utiliza para crear un nuevo array, a partir del estado anterior del carrito y agregar un nuevo objeto que representa el nuevo producto
             setCantidadTotal (prev => prev + cantidad);
             //En este caso, le decimos que se acuerde de la cantidad de un producto que tenia, y le agregue la cantidad que le agrego el cliente
-            setTotal (prev => prev + item.precio * cantidad);
+            setTotal (prev => prev + (item.precio * cantidad));
             //Aqui, calcula la nueva compra, usando el valor que tenía anteriormente
         } else {
             const carritoActualizado = carrito.map (prod => {
@@ -42,7 +41,6 @@ export const CarritoProvider = ({children}) => {
         }
     }
 
-
     //Función para eliminar producto
     //En este caso, si se tienen 10 muffins, se van a eliminar los 10, no de a uno
     const eliminarProducto = (id) => {
@@ -53,7 +51,6 @@ export const CarritoProvider = ({children}) => {
         setCantidadTotal (prev => prev - productoEliminado.cantidad);
         setTotal (prev => prev - (productoEliminado.item.precio * productoEliminado.cantidad));
     }
-
 
     //Función para vaciar el carrito
     const vaciarCarrito = () => {
@@ -68,6 +65,5 @@ export const CarritoProvider = ({children}) => {
         </CarritoContext.Provider>
     )
     //En el value enviamos el valor actual del carrito y los métodos a los componentes de mi apicación que los necesiten.
-
-    //Usamos la propiedad especial "Children", para representar a todos aqeullos componentes que puedan necestar el carrito y sus métodos
+    //Usamos la propiedad especial "Children", para representar a todos aquellos componentes que puedan necestar el carrito y sus métodos
 }
