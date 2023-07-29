@@ -1,3 +1,12 @@
 html body{
     background-color: #d5cfcd;
 }
+button{
+    border-radius: 15px;
+    padding: 6px;
+    font-weight: 500;
+}
+strong {
+    margin: 0%;
+    padding: 0%;
+}

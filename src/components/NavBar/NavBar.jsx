@@ -6,7 +6,7 @@ const NavBar = () => {
   return (
     <header>
         <Link className='navigation' to="/">
-          <h1><strong className='brand'>Èclat</strong></h1>
+          <img className="img-fluid nav__logo" src="..\images\LogoSample.png" alt="Logo Èclat CoffeShop"/>
         </Link>
         <nav>
             <ul>

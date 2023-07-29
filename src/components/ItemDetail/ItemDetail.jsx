@@ -19,15 +19,18 @@ const ItemDetail = ({id, nombre, precio, img, stock, descripcion}) => {
   return (
     <div>
         <h2>Nombre: {nombre} </h2>
-        <h3>Precio: {precio} </h3>
+        <h3>Precio: ${precio} </h3>
         <h3>ID: {id} </h3>
+        <h3>Stock: {stock} </h3>
         <p>{descripcion}</p>
         <img src={img} alt={nombre} />
         {
-          agregarCantidad > 0 ? (<Link to="/cart"> Terminar compra </Link>) : (<ItemCount inicial={1} stock={stock} funcionAgregar={manejadorCantidad}/>)
+          agregarCantidad > 0 ? (<Link to="/cart"><button> Terminar compra </button></Link>) : (<ItemCount inicial={1} stock={stock} funcionAgregar={manejadorCantidad}/>)
         }
     </div>
   )
 }
 
 export default ItemDetail
+
+

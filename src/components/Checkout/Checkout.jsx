@@ -1,4 +1,5 @@
 import { useState, useContext } from "react";
+import './Checkout.css'
 import { CarritoContext } from "../../context/CarritoContext";
 import { db } from "../../services/config";
 import { collection, addDoc, updateDoc, doc, getDoc } from "firebase/firestore";
@@ -74,18 +75,6 @@ const Checkout = () => {
                 console.log("No se puede actualizar el stock", error);
                 setError("No se puede actualizar el stock, intente más tarde");
             })
-
-
-    //     //Guardamos la orden en la base de datos
-    //     addDoc(collection(db, "ordenes"), orden)
-    //     .then(docRef => {
-    //         setOrdenId(docRef.id);
-    //         vaciarCarrito();
-    //     })
-    //     .catch(error => {
-    //         console.log("Error al crear la orden", error);
-    //         setError("Se produjo un error al guardar la orden");
-    //     })
     }
 
     return (
@@ -95,10 +84,10 @@ const Checkout = () => {
                 {
                     carrito.map(producto => (
                         <div key={producto.item.id}>
-                            <p>{producto.item.nombre} x {producto.cantidad}</p>
-                            <p>{producto.item.precio}</p>
+                            <p><strong>{producto.item.nombre}</strong> x {producto.cantidad}</p>
+                            <p>${producto.item.precio}</p>
                             <hr />
-                            <p>Cantidad total: {cantidadTotal}</p>
+                            <strong>Cantidad total: {cantidadTotal + " productos"}</strong>
                         </div>
                     ))
                 }
