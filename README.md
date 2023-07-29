@@ -1,54 +1,47 @@
 # Èclat CaféShop - README
-¡Bienvenido a CaféShop, una tienda web para los amantes del café! Este proyecto está construido usando Vite, React, React Router y Firebase, proporcionando una experiencia de compra de café fluida y placentera.
+Éste es un pproyecto de e-commerce básico que se realiza en el contexto de entrega final del cuerso de Reacct Js de CoderHouse Academy.
+La aplicación permite ver un alista de productos de supermercado y realizar compras en línea. Los productos y las órdenes de compra se almacenan en Firebase.
 
+## Tecnologías utilizadas
+- Vite
+- React
+- React Router
+- Firebase
 
-## Características
-- Explora una amplia selección de productos de café.
-- Visualiza descripciones detalladas e imágenes de los productos.
-- Agrega productos a tu carrito para una experiencia de café personalizada.
-- Gestiona fácilmente los elementos de tu carrito, actualiza las cantidades y elimina productos.
-- Procede al pago y realiza tu pedido de forma segura.
-- Regístrate o inicia sesión para acceder a funciones personalizadas.
-- Explora artículos y consejos relacionados con el café en nuestro blog.
+## Características y funcionalidades
+- Explora una selección de productos.
+- Visualiza descripciones e imágenes de los productos.
+- Agrega productos a tu carrito de compras para una experiencia de café personalizada.
+- Gestiona fácilmente los elementos de tu carrito y elimina productos de tu carrito.
+- Realiza una orden de compra.
 
 
 ## Instalación
+### Para instalar y ejecutar la aplicación en tu máquina local, sigue los siguientes pasos
 1. Clona este repositorio en tu máquina local.
-2. Navega al directorio del proyecto:
-```bash
-cd CaféShop
-```
-3. Instala las dependencias:
+2. Abre una terminal en el directorio del proyecto.
+3. Ejecuta el siguiente comando, para instalar las dependencias:
 ```bash
 npm install
 ```
-
-
-## Configuración
-1. Crea un proyecto de Firebase y configura la autenticación y la base de datos Firestore.
-2. Obtén la configuración de tu proyecto de Firebase (apiKey, authDomain, databaseURL, projectId, storageBucket, messagingSenderId, appId) y reemplázala en el archivo `src/firebase.js`.
-
-
-## Uso
-1. Ejecuta el servidor de desarrollo:
+4. Ejecuta el siguiente comando, para inciar la aplicación:
 ```bash
 npm run dev
 ```
-2. Visita `http://localhost:3000` en tu navegador para acceder a la aplicación web CaféShop.
+5. Abre tu navegador y navega a http://localhost:5173 para ver la aplicación en acción.
 
 
-## Implementación
-1. Genera el código listo para producción:
-```bash
-npm run build
-```
-2. Despliega la carpeta `dist` generada en el servicio de alojamiento de tu elección.
+## Configuración de Firebase
+1. Crea una cuenta en Firebase y crea un nuevo proyecto.
+2. En la sección "Athentication" de Firebase, habilita el proveedor de 
+3. Autenticación de correo electrónico y contraseña
+4. EN la sección "Firestore" de Firebase, crea una nueva base de datos y configura las reglas de seguridad para permitir lectura/escritura solamente a usuarios autenticados.
+5. En la sección "Preject settings" de Firebase, haz click en "Add app" y sigue las instrucciones para agregar una nueva aplicación web. 
+6. Copia las credenciales de Firebase y configura las variables de entorno .env de tu proyecto.
 
 
 ## Contribuciones
-Agradecemos las contribuciones de la comunidad para mejorar CaféShop. Siéntete libre de enviar informes de errores, solicitudes de funciones o pull requests.
-
+Agradecemos las contribuciones de la comunidad para mejorar nuestro e-commerce de Èclat CaféShop. Siéntete libre de enviar informes de errores, solicitudes de funciones o pull requests.
 
 ## Licencia
-CaféShop se distribuye bajo la [Licencia MIT](LICENSE).
-¡Disfruta de tu experiencia de compra de café con CaféShop! Si tienes alguna pregunta o necesitas asistencia, por favor, contacta a nuestro equipo de soporte en support@cafeshop.com.
+Este proyecto "Èclat CaféShop" se distribuye bajo la [Licencia MIT](LICENSE).
