@@ -2,7 +2,7 @@ import { initializeApp } from "firebase/app";
 import {getFirestore} from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDNWqKUz3xrQ0D8YHtMLdlShpJZCMVcpwU",
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
   authDomain: "eclat-cafe-165a5.firebaseapp.com",
   projectId: "eclat-cafe-165a5",
   storageBucket: "eclat-cafe-165a5.appspot.com",

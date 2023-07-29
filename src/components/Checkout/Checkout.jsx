@@ -1,7 +1,7 @@
 import { useState, useContext } from "react";
 import { CarritoContext } from "../../context/CarritoContext";
 import { db } from "../../services/config";
-import { collection, addDoc } from "firebase/firestore";
+import { collection, addDoc, updateDoc, doc, getDoc } from "firebase/firestore";
 
 const Checkout = () => {
     const [nombre, setNombre] = useState("");
@@ -26,7 +26,7 @@ const Checkout = () => {
         
         //Validamos que lo scampos de email concidan
         if(email !== emailConfirmacion){
-            setError("Los campos del email no coinciden")
+            setError("Los campos no coinciden")
             return;
         }
 
@@ -45,16 +45,47 @@ const Checkout = () => {
             email
         };
 
-        //Guardamos la orden en la base de datos
-        addDoc(collection(db, "ordenes"), orden)
-        .then(docRef => {
-            setOrdenId(docRef.id);
-            vaciarCarrito();
-        })
-        .catch(error => {
-            console.log("Error al crear la orden", error);
-            setError("Se produjo un error al guardar la orden");
-        })
+        //Ejecutaremos vairs promesas en paralelo, por un lado: que actualice el stock de productos y por el otro lado, que genere una orden de compra. Para esto, utilizaremos "Promise.All()"
+        Promise.all(
+            orden.items.map(async (productoOrden) => {
+                const productoRef = doc(db, "inventario", productoOrden.id);
+                //Por cada producto en la coleccion, obtengo una referencia y por cada referencia, obtenemos el doc
+                const productoDoc = await getDoc(productoRef);
+                const stockActual = productoDoc.data().stock;
+                //Data es un método que me permite acceder a la información del documento
+                await updateDoc(productoRef, {
+                    stock: stockActual - productoOrden.cantidad,
+                })
+            })
+        )
+            .then(() => {
+                //Guardamos la orden en la base de datos
+                addDoc(collection(db, "ordenes"), orden)
+                    .then((docRef) => {
+                        setOrdenId(docRef.id);
+                        vaciarCarrito();
+                    })
+                    .catch((error) => {
+                        console.log("Error al crear la orden", error);
+                        setError("Error al crear la orden, por favor vuelva a intentarlo")
+                    });
+            })
+            .catch((error) => {
+                console.log("No se puede actualizar el stock", error);
+                setError("No se puede actualizar el stock, intente más tarde");
+            })
+
+
+    //     //Guardamos la orden en la base de datos
+    //     addDoc(collection(db, "ordenes"), orden)
+    //     .then(docRef => {
+    //         setOrdenId(docRef.id);
+    //         vaciarCarrito();
+    //     })
+    //     .catch(error => {
+    //         console.log("Error al crear la orden", error);
+    //         setError("Se produjo un error al guardar la orden");
+    //     })
     }
 
     return (
@@ -67,6 +98,7 @@ const Checkout = () => {
                             <p>{producto.item.nombre} x {producto.cantidad}</p>
                             <p>{producto.item.precio}</p>
                             <hr />
+                            <p>Cantidad total: {cantidadTotal}</p>
                         </div>
                     ))
                 }
