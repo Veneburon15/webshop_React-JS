@@ -1,6 +1,6 @@
 # Èclat CaféShop - README
-Éste es un pproyecto de e-commerce básico que se realiza en el contexto de entrega final del cuerso de Reacct Js de CoderHouse Academy.
-La aplicación permite ver un alista de productos de supermercado y realizar compras en línea. Los productos y las órdenes de compra se almacenan en Firebase.
+Éste es un proyecto de e-commerce básico que se realiza en el contexto de entrega final del curso de React Js de CoderHouse Academy.
+La aplicación permite ver una lista de productos (helados, cafés y postres) y realizar compras en línea. Los productos y las órdenes de compra se almacenan en Firebase.
 
 ## Tecnologías utilizadas
 - Vite
@@ -33,15 +33,15 @@ npm run dev
 
 ## Configuración de Firebase
 1. Crea una cuenta en Firebase y crea un nuevo proyecto.
-2. En la sección "Athentication" de Firebase, habilita el proveedor de 
+2. En la sección "Athentication" de Firebase, habilita el proveedor 
 3. Autenticación de correo electrónico y contraseña
-4. EN la sección "Firestore" de Firebase, crea una nueva base de datos y configura las reglas de seguridad para permitir lectura/escritura solamente a usuarios autenticados.
+4. En la sección "Firestore" de Firebase, crea una nueva base de datos y configura las reglas de seguridad para permitir lectura/escritura solamente a usuarios autenticados.
 5. En la sección "Preject settings" de Firebase, haz click en "Add app" y sigue las instrucciones para agregar una nueva aplicación web. 
 6. Copia las credenciales de Firebase y configura las variables de entorno .env de tu proyecto.
 
 
 ## Contribuciones
-Agradecemos las contribuciones de la comunidad para mejorar nuestro e-commerce de Èclat CaféShop. Siéntete libre de enviar informes de errores, solicitudes de funciones o pull requests.
+Agradecemos las contribuciones de la comunidad para mejorar nuestro e-commerce de "Èclat CaféShop". Siéntete libre de enviar informes de errores, solicitudes de funciones o pull requests.
 
 ## Licencia
 Este proyecto "Èclat CaféShop" se distribuye bajo la [Licencia MIT](LICENSE).
